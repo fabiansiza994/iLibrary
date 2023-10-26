@@ -2,21 +2,17 @@ package com.library.fmsp.application.usecase;
 
 import com.library.fmsp.application.dto.UserDTO;
 import com.library.fmsp.application.port.UserService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-@Slf4j
 @Service
-public class SignUpUseCase {
+public class EditUserUseCase {
     private final UserService userService;
 
-    public SignUpUseCase(UserService userService) {
+    public EditUserUseCase(UserService userService) {
         this.userService = userService;
     }
 
-    public UserDTO signUp(UserDTO userDTO){
-        //userDTO.validateFields();
-        userService.verifyEmail(userDTO.getEmail());
-        return userService.signUp(userDTO);
+    public UserDTO editUser(UserDTO userDTO){
+        return userService.editUser(userDTO);
     }
 }

@@ -1,5 +1,6 @@
 package com.library.fmsp.application.usecase;
 
+import com.library.fmsp.application.dto.LoginDTO;
 import com.library.fmsp.application.dto.LoginResultDTO;
 import com.library.fmsp.application.dto.UserDTO;
 import com.library.fmsp.config.Constants;
@@ -28,12 +29,12 @@ public class LoginUseCase {
         this.jwtUtil = jwtUtil;
     }
 
-    public LoginResultDTO login(UserDTO userDTO){
+    public LoginResultDTO login(LoginDTO loginDTO){
         log.info("haciendo login");
         var result = new LoginResultDTO();
         try{
             Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(userDTO.getEmail(), userDTO.getPassword())
+                    new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getPassword())
             );
 
             if(authentication.isAuthenticated()){

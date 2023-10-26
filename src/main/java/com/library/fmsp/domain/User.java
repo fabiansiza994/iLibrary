@@ -1,6 +1,7 @@
 package com.library.fmsp.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,14 +18,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+
     @Column(name = "nombre")
     private String nombre;
 
-    @Column(name = "numeroDeContacto")
-    private String numeroContacto;
 
     @Column(name = "email")
     private String email;
+
 
     @Column(name = "password", unique = true)
     private String password;
