@@ -1,5 +1,6 @@
 package com.library.fmsp.adapter.primary;
 
+import com.library.fmsp.application.dto.LoginResultDTO;
 import com.library.fmsp.application.dto.UserDTO;
 import com.library.fmsp.application.usecase.LoginUseCase;
 import com.library.fmsp.application.usecase.SignUpUseCase;
@@ -22,14 +23,14 @@ public class UserController {
         this.loginUseCase = loginUseCase;
     }
 
-    @PostMapping("/signUp")
+    @PostMapping("/signup")
     public ResponseEntity<UserDTO> signUp(@RequestBody UserDTO userDTO){
         var user = signUpUseCase.signUp(userDTO);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody UserDTO userDTO){
+    public ResponseEntity<LoginResultDTO> login(@RequestBody UserDTO userDTO){
         var user = loginUseCase.login(userDTO);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }

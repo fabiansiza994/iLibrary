@@ -1,5 +1,6 @@
 package com.library.fmsp.application.usecase;
 
+import com.library.fmsp.application.dto.LoginResultDTO;
 import com.library.fmsp.application.dto.UserDTO;
 import com.library.fmsp.config.Constants;
 import com.library.fmsp.config.exception.IncorrectCredentials;
@@ -27,8 +28,9 @@ public class LoginUseCase {
         this.jwtUtil = jwtUtil;
     }
 
-    public String login(UserDTO userDTO){
+    public LoginResultDTO login(UserDTO userDTO){
         log.info("haciendo login");
+        var result = new LoginResultDTO();
         try{
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(userDTO.getEmail(), userDTO.getPassword())
@@ -36,8 +38,9 @@ public class LoginUseCase {
 
             if(authentication.isAuthenticated()){
                 if(customerDetailService.getUserDetail().getStatus()){
-                    return jwtUtil.generateToken(customerDetailService.getUserDetail().getEmail(),
-                            customerDetailService.getUserDetail().getRole());
+                    result.setToken(jwtUtil.generateToken(customerDetailService.getUserDetail().getEmail(),
+                            customerDetailService.getUserDetail().getRole()));
+                    return result;
 
                 }
             }

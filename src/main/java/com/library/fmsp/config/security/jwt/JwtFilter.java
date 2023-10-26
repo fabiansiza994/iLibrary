@@ -1,5 +1,6 @@
 package com.library.fmsp.config.security.jwt;
 
+import com.library.fmsp.config.exception.FieldIsNotNull;
 import com.library.fmsp.config.security.CustomerDetailService;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
@@ -30,11 +31,15 @@ public class JwtFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
-        if(request.getServletPath().matches("/user/login|user/forgotPassword|user/signup")){
+        if(request.getServletPath().matches("/user/login|/user/forgotPassword|/user/signup")){
             filterChain.doFilter(request, response);
         }else {
             String authorizationHeader = request.getHeader("Authorization");
             String token = null;
+
+            if(authorizationHeader == null){
+                throw new FieldIsNotNull("espere autenticacion por el administrador");
+            }
 
             if(authorizationHeader != null && authorizationHeader.startsWith("Bearer ")){
                 token = authorizationHeader.substring(7);
