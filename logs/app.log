@@ -1,0 +1,44 @@
+2023-10-26 23:39:10 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.library.fmsp.FmspApplicationTests]: FmspApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-10-26 23:39:11 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.library.fmsp.FmspApplication for test class com.library.fmsp.FmspApplicationTests
+2023-10-26 23:39:12 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2023-10-26 23:39:12 [main] INFO  c.library.fmsp.FmspApplicationTests - Starting FmspApplicationTests using Java 20.0.1 with PID 17152 (started by Fabia in C:\Users\Fabia\Documents\iLibrary\iLibrary)
+2023-10-26 23:39:12 [main] INFO  c.library.fmsp.FmspApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2023-10-26 23:39:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 23:39:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 177 ms. Found 2 JPA repository interfaces.
+2023-10-26 23:39:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-10-26 23:39:20 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@17c4dc5b
+2023-10-26 23:39:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-10-26 23:39:20 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 23:39:20 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-10-26 23:39:20 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2023-10-26 23:39:22 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26 23:39:25 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-10-26 23:39:26 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 23:39:28 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26 23:39:30 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@31d327b6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5b084c4c, org.springframework.security.web.context.SecurityContextHolderFilter@7469c73d, org.springframework.security.web.header.HeaderWriterFilter@62604ed4, org.springframework.web.filter.CorsFilter@2b08f55a, org.springframework.security.web.authentication.logout.LogoutFilter@415c5469, com.library.fmsp.config.security.jwt.JwtFilter@5a740449, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1fcb01f8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4ee41c66, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@67b5da40, org.springframework.security.web.session.SessionManagementFilter@48971262, org.springframework.security.web.access.ExceptionTranslationFilter@53a3ccc, org.springframework.security.web.access.intercept.AuthorizationFilter@63513c1c]
+2023-10-26 23:39:33 [main] INFO  c.library.fmsp.FmspApplicationTests - Started FmspApplicationTests in 21.868 seconds (process running for 26.111)
+2023-10-26 23:39:35 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 23:39:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-10-26 23:39:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-10-26 23:42:15 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.library.fmsp.FmspApplicationTests]: FmspApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-10-26 23:42:16 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.library.fmsp.FmspApplication for test class com.library.fmsp.FmspApplicationTests
+2023-10-26 23:42:19 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2023-10-26 23:42:19 [main] INFO  c.library.fmsp.FmspApplicationTests - Starting FmspApplicationTests using Java 20.0.1 with PID 10400 (started by Fabia in C:\Users\Fabia\Documents\iLibrary\iLibrary)
+2023-10-26 23:42:19 [main] INFO  c.library.fmsp.FmspApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2023-10-26 23:42:26 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 23:42:26 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 318 ms. Found 2 JPA repository interfaces.
+2023-10-26 23:42:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-10-26 23:42:32 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3ec8c874
+2023-10-26 23:42:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-10-26 23:42:33 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 23:42:34 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-10-26 23:42:34 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2023-10-26 23:42:37 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26 23:42:42 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-10-26 23:42:44 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 23:42:46 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26 23:42:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@269d7387, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a579d04, org.springframework.security.web.context.SecurityContextHolderFilter@8570718, org.springframework.security.web.header.HeaderWriterFilter@5cd1a43e, org.springframework.web.filter.CorsFilter@50c8d23d, org.springframework.security.web.authentication.logout.LogoutFilter@62532a51, com.library.fmsp.config.security.jwt.JwtFilter@3eec817a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d87f67b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@77bdef4c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ea5464c, org.springframework.security.web.session.SessionManagementFilter@19d9e0d0, org.springframework.security.web.access.ExceptionTranslationFilter@40beeda, org.springframework.security.web.access.intercept.AuthorizationFilter@12b1dcec]
+2023-10-26 23:42:52 [main] INFO  c.library.fmsp.FmspApplicationTests - Started FmspApplicationTests in 34.751 seconds (process running for 44.443)
+2023-10-26 23:42:54 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 23:42:55 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-10-26 23:42:55 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
