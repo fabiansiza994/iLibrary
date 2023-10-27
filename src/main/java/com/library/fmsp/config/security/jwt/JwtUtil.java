@@ -3,6 +3,7 @@ package com.library.fmsp.config.security.jwt;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+@Slf4j
 @Service
 public class JwtUtil {
 
@@ -38,6 +40,7 @@ public class JwtUtil {
     }
 
     public String generateToken(String username, String role){
+        log.info("generando token...");
         Map<String, Object> claims = new HashMap<>();
         claims.put("role", role);
         return createToken(claims, username);

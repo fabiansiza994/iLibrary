@@ -31,6 +31,7 @@ public class SignUpRepositoryAdapter implements UserService {
     @Override
     public UserDTO signUp(UserDTO userDTO) {
         var user = userRepository.save(modelMapper.map(userDTO, User.class));
+        log.info("usario registrado");
         return modelMapper.map(user, UserDTO.class);
     }
 
@@ -38,6 +39,7 @@ public class SignUpRepositoryAdapter implements UserService {
     public void verifyEmail(String email) {
         var user = findByEmail(email);
         if(user.isPresent()){
+            log.error(Constants.USER_ALREADY_EXIST);
             throw new UserAlreadyExist(Constants.USER_ALREADY_EXIST);
         }
     }
@@ -68,6 +70,7 @@ public class SignUpRepositoryAdapter implements UserService {
     public UserDTO findById(Integer id){
         var userDb = userRepository.findById(id);
         if(userDb.isEmpty()){
+            log.error(Constants.USER_NOT_FOUND);
             throw new UserNotFound(Constants.USER_NOT_FOUND);
         }
         return modelMapper.map(userDb.get(), UserDTO.class);

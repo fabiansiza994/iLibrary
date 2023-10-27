@@ -15,7 +15,7 @@ public class SignUpUseCase {
     }
 
     public UserDTO signUp(UserDTO userDTO){
-        //userDTO.validateFields();
+        log.info("registrando usuario...");
         userService.verifyEmail(userDTO.getEmail());
         return userService.signUp(userDTO);
     }
