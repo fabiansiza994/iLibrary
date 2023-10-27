@@ -37,10 +37,6 @@ public class JwtFilter extends OncePerRequestFilter {
             String authorizationHeader = request.getHeader("Authorization");
             String token = null;
 
-            if(authorizationHeader == null){
-                throw new FieldIsNotNull("espere autenticacion por el administrador");
-            }
-
             if(authorizationHeader != null && authorizationHeader.startsWith("Bearer ")){
                 token = authorizationHeader.substring(7);
                 username = jwtUtil.extractUsername(token);
