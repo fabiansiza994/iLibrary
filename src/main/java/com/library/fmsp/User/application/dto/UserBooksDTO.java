@@ -10,4 +10,5 @@ public class UserBooksDTO {
     private String userName;
     private Integer idBook;
     private String book;
+    private Double price;
 }

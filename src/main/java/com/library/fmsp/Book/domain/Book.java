@@ -26,6 +26,10 @@ public class Book {
     @ManyToMany(mappedBy = "books")
     private Set<User> users;
 
+    @NotBlank(message = "el precio es requerido")
+    @Column(name = "price")
+    private Double price;
+
     @Column(name = "status")
     private Boolean status;
 }

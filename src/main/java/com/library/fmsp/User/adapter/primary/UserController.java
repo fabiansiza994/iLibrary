@@ -25,6 +25,7 @@ public class UserController {
     private final DeleteUserUseCase deleteUserUseCase;
     private final EditUserUseCase editUserUseCase;
     private final FindUserBookByUserIdUseCase findUserBookByUserIdUseCase;
+    private final FindAveragePriceByUserIdUseCase findAveragePriceByUserIdUseCase;
 
     @Operation(description = "Post endpoint for create users",
     responses = {@ApiResponse(description = "Success", responseCode = "201"),
@@ -78,5 +79,14 @@ public class UserController {
     public ResponseEntity<List<UserBooksDTO>> getBookByUserId(@PathVariable Integer userId){
         var userBookList = findUserBookByUserIdUseCase.findUserBooksByUserId(userId);
         return new ResponseEntity<>(userBookList, HttpStatus.OK);
+    }
+
+    @Operation(description = "Using JPQL to Calculate the Average Price of a User's Books",
+            responses = {@ApiResponse(description = "Success", responseCode = "200"),
+                    @ApiResponse(description = "Unauthorized / Invalid Token", responseCode = "403")})
+    @GetMapping("get_average_books_by_user_id/{userId}")
+    public ResponseEntity<Double> getAverageBookByUserId(@PathVariable Integer userId){
+        var averagePrice = findAveragePriceByUserIdUseCase.getAveragePriceForUser(userId);
+        return new ResponseEntity<>(averagePrice, HttpStatus.OK);
     }
 }

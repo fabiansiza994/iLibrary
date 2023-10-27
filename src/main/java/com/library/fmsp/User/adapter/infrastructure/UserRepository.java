@@ -1,6 +1,5 @@
 package com.library.fmsp.User.adapter.infrastructure;
 
-import com.library.fmsp.User.application.dto.UserBooksDTO;
 import com.library.fmsp.User.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -19,16 +18,25 @@ public interface UserRepository extends JpaRepository<User, Integer> {
             "u.id idUser, " +
             "u.nombre userName, " +
             "b.id idBook, " +
-            "b.nombre book " +
+            "b.nombre book, " +
+            "b.price " +
             " from user_book ub inner join users u on ub.user_id = u.id " +
             " inner join books b on ub.book_id = b.id " +
             " where u.id=:userId ", nativeQuery = true)
     List<projectionDto> findUserBooksByUserId(@Param("userId") Integer userId);
+
+    @Query(value = "select " +
+            "AVG(b.price) " +
+            " from user_book ub inner join users u on ub.user_id = u.id " +
+            " inner join books b on ub.book_id = b.id " +
+            " where u.id = :userId", nativeQuery = true)
+    Optional<Double> findAveragePriceByUserId(Integer userId);
 
     public interface projectionDto{
         Integer getIdUser();
         String getUserName();
         Integer getIdBook();
         String getBook();
+        Double getPrice();
     }
 }

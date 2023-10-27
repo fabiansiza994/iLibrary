@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface UserBookService {
     List<UserBooksDTO> findUserBooksByUserId(Integer userId);
+    Double findAveragePriceByUserId(Integer userId);
 }

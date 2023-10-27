@@ -25,4 +25,9 @@ public class UserBookRepositoryAdapter implements UserBookService {
         var list = userRepository.findUserBooksByUserId(userId);
         return list.stream().map(item -> modelMapper.map(item, UserBooksDTO.class)).collect(Collectors.toList());
     }
+
+    @Override
+    public Double findAveragePriceByUserId(Integer userId) {
+        return userRepository.findAveragePriceByUserId(userId).orElseThrow();
+    }
 }
